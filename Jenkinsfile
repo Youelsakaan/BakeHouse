@@ -7,5 +7,11 @@ pipeline {
                 echo 'Build Number'
             }
         }
+        stage('Deploy') {
+            steps {
+                // Add your deployment steps here
+                sh 'echo "Deploying..."'
+            }
+        }
     }
 }
