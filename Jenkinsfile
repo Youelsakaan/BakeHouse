@@ -4,14 +4,18 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Build Number'
+                script {
+                    // Display the build number
+                    def buildNumber = currentBuild.number
+                    echo "Build Number: ${buildNumber}"
+
+                    // List files in the workspace
+                    echo 'List of files in the workspace:'
+                    sh 'ls -l'
+                }
             }
         }
-        stage('Deploy') {
-            steps {
-                // Add your deployment steps here
-                sh 'echo "Deploying..."'
-            }
-        }
+      
     }
 }
+
